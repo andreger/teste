@@ -26,6 +26,9 @@ jobs:
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         cat ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H $HOST >> ~/.ssh/known_hosts
+        ssh $USER@$HOST 'cd /home/ubuntu/repositories && git pull'
 
     - name: Deploy using Docker Compose with build
       env:

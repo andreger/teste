@@ -35,4 +35,4 @@ jobs:
         HOST: ${{ secrets.EC2_HOST }}
         USER: ${{ secrets.EC2_USER }}
       run: |
-        ssh $USER@$HOST 'cd /path/to/your/app && docker-compose up -d --build'
+        ssh $USER@$HOST 'cd /home/ubuntu/repositories/teste && docker-compose up -d --build'

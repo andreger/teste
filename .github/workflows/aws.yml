@@ -24,6 +24,8 @@ jobs:
         USER: ${{ secrets.EC2_USER }}
       run: |
         mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        cat ~/.ssh/id_rsa
 
     - name: Deploy using Docker Compose with build
       env:

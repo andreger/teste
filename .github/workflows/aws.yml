@@ -23,7 +23,7 @@ jobs:
         HOST: ${{ secrets.EC2_HOST }}
         USER: ${{ secrets.EC2_USER }}
       run: |
-        ls
+        mkdir -p ~/.ssh
 
     - name: Deploy using Docker Compose with build
       env:
